@@ -50,12 +50,18 @@ class FileController extends Controller
     private function getFiles()
     {
         $files = File::get();
+        if (!$files) {
+            $files = [];
+        }
         return $files;
     }
 
     private function getTypes()
     {
         $types = Type::withCount(['files'])->get();
+        if (!$types) {
+            $types = [];
+        }
         return $types;
     }
 
