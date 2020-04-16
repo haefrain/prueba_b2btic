@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'FileController@index')->name('/');
 Route::post('store-files', 'FileController@storeFiles')->name('store-files');
+Route::get('export/types', 'FileController@exportTypes')->name('export/types');
+Route::get('export/files', 'FileController@exportFiles')->name('export/files');

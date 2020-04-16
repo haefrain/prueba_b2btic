@@ -35,7 +35,7 @@
 
         <div class="tab-content">
             <div class="tab-pane active" id="records">
-                <a class="btn btn-blue" href="#">Exportar PDF</a>
+                <a class="btn btn-blue" target="_blank" href="{{route('export/files')}}">Exportar PDF</a>
                 <table id="table_records" class="table table-striped">
                     <thead>
                         <tr>
@@ -56,7 +56,7 @@
                 </table>
             </div>
             <div class="tab-pane" id="quantity_types">
-                <a class="btn btn-blue" href="#">Exportar PDF</a>
+                <a class="btn btn-blue" target="_blank" href="{{route('export/types')}}">Exportar PDF</a>
                 <table id="table_quantity" class="table table-striped">
                     <thead>
                         <tr>

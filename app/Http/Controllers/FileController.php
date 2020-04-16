@@ -7,6 +7,7 @@ use SoapClient;
 use App\Type;
 use App\File;
 use DB;
+use PDF;
 
 class FileController extends Controller
 {
@@ -45,6 +46,22 @@ class FileController extends Controller
         } catch (\Throwable $th) {
             dd($th);
         }
+    }
+
+    public function exportTypes()
+    {
+        $types = $this->getTypes();
+        $pdf = PDF::loadView('pdf.export_types', compact('types'));
+        $pdf->save(public_path() . '_types_report.pdf');
+        return $pdf->stream('_types_report.pdf');
+    }
+
+    public function exportFiles()
+    {
+        $files = $this->getFiles();
+        $pdf = PDF::loadView('pdf.export_files', compact('files'))->setPaper('a4', 'portrait');
+        $pdf->save(public_path() . '_files_report.pdf');
+        return $pdf->stream('_files_report.pdf');
     }
 
     private function getFiles()

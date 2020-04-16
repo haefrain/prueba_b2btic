@@ -8,9 +8,8 @@
 	<meta name="description" content="Psimetrica" />
 	<meta name="author" content="Studio 157" />
 
-	<title>@yield('titulo')</title>
+	<title>Prueba B2B TIC - Efrain Hernandez</title>
 
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Arimo:400,700,400italic">
 	<link rel="stylesheet" href="{{asset('css/fonts/linecons/css/linecons.css')}}">
 	<link rel="stylesheet" href="{{asset('css/fonts/fontawesome/css/font-awesome.min.css')}}">
 	<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
