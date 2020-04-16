@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FileController@index')->name('/');
+Route::post('store-files', 'FileController@storeFiles')->name('store-files');

@@ -13,8 +13,13 @@ class CreateFilesTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('files', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->id();
+            $table->foreignId('type_id')->constrained();
+            $table->string('code', 50)->unique();
+            $table->string('name', 250);
             $table->timestamps();
         });
     }
@@ -27,5 +32,6 @@ class CreateFilesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('files');
+        Schema::enableForeignKeyConstraints();
     }
 }
